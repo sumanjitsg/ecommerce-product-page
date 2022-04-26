@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
   entry: {
     main: path.resolve(__dirname, 'src/index.js'),
   },
@@ -10,10 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].[contenthash].js',
     clean: true,
-  },
-  watch: true,
-  watchOptions: {
-    ignored: /node_modules/,
   },
   plugins: [
     new HtmlWebpackPlugin({
