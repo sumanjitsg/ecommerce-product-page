@@ -1,0 +1,1 @@
+![GitHub Workflow Status](https://github.com/sumanjitsg/ecommerce-product-page/actions/workflows/NodeJS%20with%20Webpack/badge.svg)
