@@ -1,0 +1,23 @@
+.btn {
+  border: none;
+  cursor: pointer;
+
+  &--transparent {
+    background-color: transparent;
+  }
+
+  &--primary {
+    width: 100%;
+    border-radius: .625rem;
+    padding-block: 1.125rem;
+    background-color: var(--clr-primary-400);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-400);
+    line-height: var(--lh-300);
+    color: var(--clr-white);
+  }
+
+  &--box-shad-prim-400 {
+    box-shadow: 0 1.25rem 3.125rem -1.25rem var(--clr-primary-400);
+  }
+}

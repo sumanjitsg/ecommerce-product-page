@@ -1,0 +1,46 @@
+/* Padding */
+.px-8 {
+  padding-inline: .5rem;
+}
+
+.px-24 {
+  padding-inline: 1.5rem; // 24px
+}
+
+.py-4 {
+  padding-block: .25rem;
+}
+
+.py-18 {
+  padding-block: 1.125rem; // 18px
+}
+
+.pys-24 {
+  padding-block-start: 1.5rem;
+}
+
+.pye-88 {
+  padding-block-end: 5.5rem;
+}
+
+
+/* Margin */
+.mys-16 {
+  margin-block-start: 1rem;
+}
+
+.mys-20 {
+  margin-block-start: 1.25rem;
+}
+
+.mys-24 {
+  margin-block-start: 1.5rem;
+}
+
+.br-6 {
+  border-radius: .375rem; //6px
+}
+
+.br-10 {
+  border-radius: .625rem; //10px
+}
