@@ -1,0 +1,74 @@
+$animation-speed: 300ms;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: hsl(0, 0%, 0%, .75);
+  visibility: hidden;
+
+  &__nav {
+    position: absolute;
+    min-width: 66.67%;
+    min-height: 100%;
+    padding: 1.5rem;
+    background-color: var(--clr-white);
+  }
+
+  &--open {
+    visibility: visible;
+    animation: fadein $animation-speed ease-out forwards;
+
+    &__nav {
+      animation: slidein $animation-speed ease-out forwards;
+    }
+  }
+
+  &--closed {
+    visibility: visible;
+    animation: fadeout $animation-speed ease-out forwards;
+
+    &__nav {
+      animation: slideout $animation-speed ease-out forwards;
+    }
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+  }
+
+  0% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideout {
+  100% {
+    transform: translateX(-100%);
+  }
+
+  0% {
+    transform: translateX(0%);
+  }
+}
