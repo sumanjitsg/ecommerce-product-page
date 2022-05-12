@@ -7,7 +7,7 @@ $animation-speed: 300ms;
   visibility: hidden;
 
   &__nav {
-    position: absolute;
+    position: fixed;
     min-width: 66.67%;
     min-height: 100%;
     padding: 1.5rem;
@@ -16,19 +16,19 @@ $animation-speed: 300ms;
 
   &--open {
     visibility: visible;
-    animation: fadein $animation-speed ease-out forwards;
+    animation: fadein $animation-speed ease-out;
 
     &__nav {
-      animation: slidein $animation-speed ease-out forwards;
+      animation: slidein $animation-speed ease-out;
     }
   }
 
   &--closed {
     visibility: visible;
-    animation: fadeout $animation-speed ease-out forwards;
+    animation: fadeout $animation-speed ease-out;
 
     &__nav {
-      animation: slideout $animation-speed ease-out forwards;
+      animation: slideout $animation-speed ease-out;
     }
   }
 }
