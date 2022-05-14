@@ -1,5 +1,5 @@
-import '../index.html';
 import '../sass/styles.scss';
+import './carousel';
 
 const openMenu = document.getElementById('open-menu');
 const closeMenu = document.getElementById('close-menu');

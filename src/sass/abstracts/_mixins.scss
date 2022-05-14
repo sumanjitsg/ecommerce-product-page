@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+@mixin aspect-ratio($aspect-ratio) {
+  position: relative;
+  padding-top: math.div(100%, $aspect-ratio); // aspect ratio
+}
