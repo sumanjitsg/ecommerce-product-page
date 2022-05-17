@@ -1,0 +1,159 @@
+@use '../abstracts/mixins';
+
+$animation-speed: 300ms;
+
+.nav {
+  position: fixed;
+  inset: 0;
+  background-color: hsl(0, 0%, 0%, .75);
+  z-index: 9999;
+
+  &__container {
+    max-width: 66.67%;
+    min-height: 100%;
+    padding: 1.5rem;
+    background-color: var(--clr-white);
+
+    > * + * {
+      margin-top: 3rem;
+    }
+  }
+
+  &__list {
+    font-weight: var(--fw-700);
+    font-size: var(--fs-500);
+
+    > * + * {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__list-item {
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &__btn {
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    background-color: transparent;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &--open {
+      background-image: url('../assets/icon-menu.svg');
+      background-position: bottom;
+    }
+
+    &--close {
+      background-image: url('../assets/icon-close.svg');
+    }
+  }
+
+  &--hidden {
+    visibility: hidden;
+  }
+
+  &--open {
+    visibility: visible;
+    animation: fadein $animation-speed ease-out forwards;
+
+    .nav__container {
+      animation: slidein $animation-speed ease-out forwards;
+    }
+  }
+
+  &--closed {
+    visibility: visible;
+    animation: fadeout $animation-speed ease-out forwards;
+
+    .nav__container {
+      animation: slideout $animation-speed ease-out forwards;
+    }
+  }
+}
+
+@include mixins.media('medium') {
+  .nav {
+    position: initial;
+    background-color: transparent;
+    visibility: visible;
+    z-index: initial;
+    margin-left: 2.5rem;
+
+    &__container {
+      max-width: 100%;
+      padding: 0;
+
+      > * + * {
+        margin-top: 0;
+      }
+    }
+
+    &__list {
+
+      > * + * {
+        margin-top: 0;
+        margin-left: 2rem;
+      }
+    }
+
+    &__list-item {
+      display: inline-block;
+      font-size: var(--fs-300);
+      font-weight: var(--fw-400);
+    }
+
+    &__btn {
+      display: none;
+    }
+  }
+
+}
+
+@media screen and (min-width: 900px) {}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+  }
+
+  0% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideout {
+  100% {
+    transform: translateX(-100%);
+  }
+
+  0% {
+    transform: translateX(0%);
+  }
+}

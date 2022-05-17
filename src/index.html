@@ -15,13 +15,41 @@
       <div class="container flex space-between align-center">
         <!-- Menu, Logo group -->
         <div class='flex gap-16'>
-          <button id='open-menu' class='flex-end |
-                         btn btn--transparent'>
-            <img src="assets/icon-menu.svg" alt="menu icon">
-          </button>
+          <button class='nav__btn nav__btn--open'></button>
           <div>
             <img src="assets/logo.svg" alt="sneakers logo">
           </div>
+
+
+          <!-- Navigation -->
+          <nav class='nav nav--hidden'>
+            <div class='nav__container'>
+              <div>
+                <button class='nav__btn nav__btn--close'></button>
+              </div>
+              <ul class='nav__list'>
+                <li class='nav__list-item'>
+                  <a class='btn'>Collections</a>
+                </li>
+
+                <li class='nav__list-item'>
+                  <a class='btn'>Men</a>
+                </li>
+
+                <li class='nav__list-item'>
+                  <a class='btn'>Women</a>
+                </li>
+
+                <li class='nav__list-item'>
+                  <a class='btn'>About</a>
+                </li>
+
+                <li class='nav__list-item'>
+                  <a class='btn'>Contact</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
 
         <!-- Cart, Avatar group -->
@@ -39,121 +67,104 @@
       </div>
     </header>
 
-    <!-- Navigation -->
-    <div id='modal' class="modal">
-      <nav id='nav' class='modal__nav'>
-        <button id='close-menu' class='btn btn--transparent'>
-          <img src="assets/icon-close.svg" alt="menu icon">
-        </button>
-        <ul class='mys-54'>
-          <li class='fw-700 fs-500'>
-            <a class='btn btn--transparent btn--block'>
-              Collections
-            </a>
-          </li>
-
-          <li class='mys-20 fw-700 fs-500'>
-            <a class='btn btn--transparent btn--block'>
-              Men
-            </a>
-          </li>
-
-          <li class='mys-20 fw-700 fs-500'>
-            <a class='btn btn--transparent btn--block'>
-              Women
-            </a>
-          </li>
-
-          <li class='mys-20 fw-700 fs-500'>
-            <a class='btn btn--transparent btn--block'>
-              About
-            </a>
-          </li>
-
-          <li class='mys-20 fw-700 fs-500'>
-            <a class='btn btn--transparent btn--block'>
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
     <main class='pye-88'>
-      <!-- Carousel -->
-      <article class='carousel' data-carousel>
-        <ul data-slides>
-          <li class='carousel__slide carousel__slide--active'>
-            <img src="assets/image-product-1.jpg" alt="Shoes Product Image #1">
-          </li>
+      <article class='content'>
+        <!-- Carousel -->
+        <article class='carousel'>
+          <button class='carousel__btn carousel__btn--prev'></button>
+          <button class='carousel__btn carousel__btn--next'></button>
 
-          <li class='carousel__slide'>
-            <img src="assets/image-product-2.jpg" alt="Shoes Product Image #2">
-          </li>
+          <ul class='carousel__slide-list'>
+            <li class='carousel__slide carousel__slide--active'>
+              <img class='carousel__image' src="assets/image-product-1.jpg" alt="Shoes Product Image #1">
+            </li>
 
-          <li class='carousel__slide'>
-            <img src="assets/image-product-3.jpg" alt="Shoes Product Image #3">
-          </li>
+            <li class='carousel__slide'>
+              <img src="assets/image-product-2.jpg" alt="Shoes Product Image #2">
+            </li>
 
-          <li class='carousel__slide'>
-            <img src="assets/image-product-4.jpg" alt="Shoes Product Image #4">
-          </li>
-        </ul>
-        <button class='carousel__btn carousel__btn--prev' data-carousel-button='prev'>
-          <!-- <img src="assets/icon-previous.svg" alt=""> -->
-        </button>
-        <button class='carousel__btn carousel__btn--next' data-carousel-button='next'>
-          <!-- <img src="assets/icon-next.svg" alt=""> -->
-        </button>
-      </article>
+            <li class='carousel__slide'>
+              <img src="assets/image-product-3.jpg" alt="Shoes Product Image #3">
+            </li>
 
-      <!-- Product Details -->
-      <section class='container pys-24'>
-        <!-- Company name -->
-        <p class='clr-primary-400 fw-700 fs-200 uppercase ls-2'>Sneaker Company</p>
-        <!-- Product name -->
-        <h2 class='mys-20 clr-gray-700 fw-700 fs-700'>Fall Limited Edition Sneakers</h2>
-        <!-- Product description -->
-        <p class='mys-16 clr-gray-400 fs-300 lh-600 test'>
-          These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
-          they'll withstand everything the weather can offer.
-        </p>
+            <li class='carousel__slide'>
+              <img src="assets/image-product-4.jpg" alt="Shoes Product Image #4">
+            </li>
+          </ul>
+        </article>
 
-        <!-- Discounted price, Offer, Original price -->
-        <div class='mys-24 flex align-center space-between fw-700'>
-          <div class="flex gap-16 align-center">
-            <p class='fs-700'>$125.00</p>
-            <p class='fs-400 clr-primary-400 px-8 py-4 bg-primary-100 br-6'>50%</p>
+        <!-- Gallery -->
+        <article class='gallery gallery--visibility'>
+          <div class='gallery__preview'>
+            <img src="assets/image-product-1.jpg" alt="">
           </div>
-          <p class='line-through clr-gray-300'>$250.00</p>
-        </div>
-      </section>
 
-      <!-- Action items -->
-      <section class='container mys-24'>
-        <!-- Quantity -->
-        <div class='px-24 py-18 bg-gray-100 br-10 flex align-center space-between'>
-          <button class='btn btn--transparent'>
-            <img src="assets/icon-minus.svg" alt="minus">
-          </button>
-          <p class='fw-700'>
-            0
-          </p>
-          <button class='btn btn--transparent'>
-            <img src="assets/icon-plus.svg" alt="plus">
-          </button>
-        </div>
+          <ul class='gallery__thumbnail-list'>
+            <li class='gallery__thumbnail'>
+              <img src="assets/image-product-1-thumbnail.jpg" alt="">
+            </li>
+            <li class='gallery__thumbnail'>
+              <img src="assets/image-product-2-thumbnail.jpg" alt="">
+            </li>
+            <li class='gallery__thumbnail'>
+              <img src="assets/image-product-3-thumbnail.jpg" alt="">
+              </div>
+            <li class='gallery__thumbnail'>
+              <img src="assets/image-product-4-thumbnail.jpg" alt="">
+              </div>
+          </ul>
+        </article>
 
-        <!-- Add to cart button -->
-        <button class='mys-16 flex center gap-16 |
+        <article class='container pys-24'>
+          <!-- Product Details -->
+          <section>
+            <!-- Company name -->
+            <p class='clr-primary-400 fw-700 fs-200 uppercase ls-2'>Sneaker Company</p>
+            <!-- Product name -->
+            <h2 class='mys-20 clr-gray-700 fw-700 fs-700'>Fall Limited Edition Sneakers</h2>
+            <!-- Product description -->
+            <p class='mys-16 clr-gray-400 fs-300 lh-600 test'>
+              These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole,
+              they'll withstand everything the weather can offer.
+            </p>
+
+            <!-- Discounted price, Offer, Original price -->
+            <div class='mys-24 flex align-center space-between fw-700'>
+              <div class="flex gap-16 align-center">
+                <p class='fs-700'>$125.00</p>
+                <p class='fs-400 clr-primary-400 px-8 py-4 bg-primary-100 br-6'>50%</p>
+              </div>
+              <p class='line-through clr-gray-300'>$250.00</p>
+            </div>
+          </section>
+
+          <!-- Action items -->
+          <section class='mys-24'>
+            <!-- Quantity -->
+            <div class='px-24 py-18 bg-gray-100 br-10 flex align-center space-between'>
+              <button class='btn btn--transparent'>
+                <img src="assets/icon-minus.svg" alt="minus">
+              </button>
+              <p class='fw-700'>
+                0
+              </p>
+              <button class='btn btn--transparent'>
+                <img src="assets/icon-plus.svg" alt="plus">
+              </button>
+            </div>
+
+            <!-- Add to cart button -->
+            <button class='mys-16 flex center gap-16 |
                            btn btn--primary btn--box-shad-prim-400'>
-          <svg class='svg-current-color |
+              <svg class='svg-current-color |
                           icon-cart'>
-            <use href='#svg-icon-cart' />
-          </svg>
-          <div>Add to cart</div>
-        </button>
-      </section>
+                <use href='#svg-icon-cart' />
+              </svg>
+              <div>Add to cart</div>
+            </button>
+          </section>
+        </article>
+      </article>
     </main>
 
     <!-- Svg icon cart template -->

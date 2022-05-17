@@ -1,0 +1,24 @@
+@use '../abstracts/mixins';
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    width: 100%;
+  }
+}
+
+@include mixins.media('medium') {
+  .content {
+    margin: 0 3rem;
+    flex-wrap: nowrap;
+    gap: 10%;
+    align-items: center;
+    justify-content: space-between;
+
+    > * {
+      width: 50%;
+    }
+  }
+}

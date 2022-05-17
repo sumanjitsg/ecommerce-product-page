@@ -1,14 +1,15 @@
-const buttons = document.querySelectorAll('[data-carousel-button]');
+const buttons = document.querySelectorAll('.carousel__btn');
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    // get slides parent
+    // get slide list
     const slides = button
-      .closest('[data-carousel]')
-      .querySelector('[data-slides]');
+      .closest('.carousel')
+      .querySelector('.carousel__slide-list');
 
     // get offset
-    const offset = button.dataset.carouselButton === 'next' ? 1 : -1;
+    const offset = button.classList
+      .contains('carousel__btn--next') ? 1 : -1;
 
     // get current active slide
     const activeSlide = slides.querySelector('.carousel__slide--active');
@@ -21,6 +22,5 @@ buttons.forEach(button => {
     // change active slide
     slides.children[ newIndex ].classList.add('carousel__slide--active');
     activeSlide.classList.remove('carousel__slide--active');
-
   });
 });

@@ -1,6 +1,14 @@
 @use 'sass:math';
+@use 'breakpoints';
 
 @mixin aspect-ratio($aspect-ratio) {
   position: relative;
   padding-top: math.div(100%, $aspect-ratio); // aspect ratio
+}
+
+// Media Query
+@mixin media($size) {
+  @media screen and (min-width: breakpoints.get($size)) {
+    @content;
+  }
 }
