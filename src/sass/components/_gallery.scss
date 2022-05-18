@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../abstracts/mixins';
+@use '../abstracts/media';
 
 .gallery {
   --item-spacer: 1rem;
@@ -33,7 +33,7 @@
   &--visibility {
     display: none;
 
-    @include mixins.media('medium') {
+    @include media.query('medium') {
       display: block;
     }
   }

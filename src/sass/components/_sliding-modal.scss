@@ -1,8 +1,8 @@
-@use '../abstracts/mixins';
+@use '../abstracts/media';
 
 $animation-speed: 300ms;
 
-.nav {
+@include media.screens(sliding-modal) {
   position: fixed;
   inset: 0;
   background-color: hsl(0, 0%, 0%, .75);
@@ -12,29 +12,27 @@ $animation-speed: 300ms;
     max-width: 66.67%;
     min-height: 100%;
     padding: 1.5rem;
-    background-color: var(--clr-white);
+    background-color: white;
 
-    > * + * {
-      margin-top: 3rem;
-    }
+    // > * + * {
+    //   margin-top: 3rem;
+    // }
   }
 
   &__list {
     font-weight: var(--fw-700);
     font-size: var(--fs-500);
 
-    > * + * {
-      margin-top: 1.25rem;
-    }
+    // > * + * {
+    //   margin-top: 1.25rem;
+    // }
   }
 
-  &__list-item {
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
+  &__list-item:hover,
+  &__list-item:focus {
+    text-decoration: underline;
   }
+
 
   &__btn {
     width: 1rem;
@@ -53,10 +51,6 @@ $animation-speed: 300ms;
     &--close {
       background-image: url('../assets/icon-close.svg');
     }
-  }
-
-  &--hidden {
-    visibility: hidden;
   }
 
   &--open {
@@ -78,11 +72,10 @@ $animation-speed: 300ms;
   }
 }
 
-@include mixins.media('medium') {
+@include media.query('medium') {
   .nav {
     position: initial;
     background-color: transparent;
-    visibility: visible;
     z-index: initial;
     margin-left: 2.5rem;
 
@@ -115,8 +108,6 @@ $animation-speed: 300ms;
   }
 
 }
-
-@media screen and (min-width: 900px) {}
 
 @keyframes fadein {
   0% {

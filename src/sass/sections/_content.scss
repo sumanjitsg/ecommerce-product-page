@@ -1,4 +1,4 @@
-@use '../abstracts/mixins';
+@use '../abstracts/media';
 
 .content {
   display: flex;
@@ -9,7 +9,7 @@
   }
 }
 
-@include mixins.media('medium') {
+@include media.query('medium') {
   .content {
     margin: 0 3rem;
     flex-wrap: nowrap;

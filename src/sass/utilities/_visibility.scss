@@ -1,0 +1,9 @@
+@use '../abstracts/media';
+
+@include media.screens(hidden) {
+  visibility: hidden;
+}
+
+@include media.screens(visible) {
+  visibility: visible;
+}

@@ -1,0 +1,52 @@
+$colors: (
+  'primary': ('400': hsla(26, 100%, 55%),
+    '100': hsla(26, 100%, 94%),
+  ),
+
+  'gray': ('700': hsla(220, 13%, 13%),
+    '400': hsla(220, 9%, 45%),
+    '300': hsla(220, 14%, 75%),
+    '100': hsla(220, 64%, 98%),
+  ),
+);
+
+// Generate CSS custom properties for all color shades
+@mixin customProps() {
+
+  // for each color
+  @each $color,
+  $shades in $colors {
+
+    /* clr-#{$color} */
+    // for each shade
+    @each $shade,
+    $shade-value in $shades {
+      --clr-#{$color}-#{$shade}: #{$shade-value};
+    }
+  }
+}
+
+// Generate utility classes for all color shades
+@mixin utilities() {
+
+  // for each color
+  @each $color,
+  $shades in $colors {
+
+    // for each shade
+    /* clr-#{$color}, bg-#{$color} */
+    @each $shade,
+    $shade-value in $shades {
+
+      // text color
+      .clr-#{$color}-#{$shade} {
+        color: var(--clr-#{$color}-#{$shade});
+      }
+
+      // background color
+      .bg-#{$color}-#{$shade} {
+        background-color: var(--clr-#{$color}-#{$shade});
+      }
+    }
+  }
+}

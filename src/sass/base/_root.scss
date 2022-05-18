@@ -1,13 +1,7 @@
+@use '../abstracts/color';
+
 :root {
-  --clr-primary-400: hsla(26, 100%, 55%);
-  --clr-primary-100: hsla(26, 100%, 94%);
-
-  --clr-gray-700: hsla(220, 13%, 13%);
-  --clr-gray-400: hsla(220, 9%, 45%);
-  --clr-gray-300: hsla(220, 14%, 75%);
-  --clr-gray-100: hsla(220, 64%, 98%);
-
-  --clr-white: hsla(0, 0%, 100%);
+  @include color.customProps();
 
   --font-family: 'Kumbh Sans', sans-serif;
 
