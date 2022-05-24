@@ -1,5 +1,5 @@
 import '../sass/styles.scss';
 
-import './side-navigation';
-import './carousel';
-import './gallery';
+import './components/side-navigation/register';
+import './components/carousel/register';
+import './components/gallery/register';

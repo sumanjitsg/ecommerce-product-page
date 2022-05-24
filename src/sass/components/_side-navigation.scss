@@ -3,18 +3,22 @@
 $speed: 300ms;
 
 @layer components {
-  .show-nav {
-    animation: fadein $speed ease-out forwards;
+  [data-side-nav-container] {
+    &.open {
+      animation: fadein $speed ease-out forwards;
+    }
 
-    .nav__container {
-      animation: slidein $speed ease-out forwards;
+    &.closed {
+      animation: fadeout $speed ease-out forwards;
     }
   }
 
-  .hide-nav {
-    animation: fadeout $speed ease-out forwards;
+  [data-side-nav-pane] {
+    &.open {
+      animation: slidein $speed ease-out forwards;
+    }
 
-    .nav__container {
+    &.closed {
       animation: slideout $speed ease-out forwards;
     }
   }
