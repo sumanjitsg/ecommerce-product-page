@@ -1,5 +1,5 @@
 import '../sass/styles.scss';
 
-import './navigation';
+import './side-navigation';
 import './carousel';
 import './gallery';

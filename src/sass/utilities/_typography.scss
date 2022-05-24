@@ -1,39 +1,13 @@
-.fw-700 {
-  font-weight: 700;
-}
+@layer utilities {
+  .text-28px {
+    font-size: calc(28 / var(--to-rem));
+  }
 
-.fs-200 {
-  font-size: var(--fs-200);
-}
+  .text-15px {
+    font-size: calc(15 / var(--to-rem));
+  }
 
-.fs-300 {
-  font-size: var(--fs-300);
-}
-
-.fs-400 {
-  font-size: var(--fs-400);
-}
-
-.fs-500 {
-  font-size: var(--fs-500);
-}
-
-.fs-700 {
-  font-size: var(--fs-700);
-}
-
-.lh-600 {
-  line-height: var(--lh-600);
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.line-through {
-  text-decoration: line-through;
-}
-
-.ls-2 {
-  letter-spacing: var(--ls-200);
+  .text-18px {
+    font-size: calc(18 / var(--to-rem));
+  }
 }

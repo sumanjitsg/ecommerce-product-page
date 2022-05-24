@@ -1,14 +1,19 @@
 $colors: (
-  'primary': ('400': hsla(26, 100%, 55%),
-    '100': hsla(26, 100%, 94%),
+  'orange': ( //
+    '400': hsl(26 100% 55%),
+    '100': hsl(26 100% 94%),
   ),
 
-  'gray': ('700': hsla(220, 13%, 13%),
-    '400': hsla(220, 9%, 45%),
-    '300': hsla(220, 14%, 75%),
-    '100': hsla(220, 64%, 98%),
+  'gray': ( //
+    '900': hsl(0 0% 0% / .75),
+    '700': hsl(220 13% 13%),
+    '400': hsl(220 9% 45%),
+    '300': hsl(220 14% 75%),
+    '100': hsl(220 64% 98%),
   ),
 );
+
+$prefix: 'sc';
 
 // Generate CSS custom properties for all color shades
 @mixin customProps() {
@@ -21,7 +26,7 @@ $colors: (
     // for each shade
     @each $shade,
     $shade-value in $shades {
-      --clr-#{$color}-#{$shade}: #{$shade-value};
+      --#{$prefix}-clr-#{$color}-#{$shade}: #{$shade-value};
     }
   }
 }
@@ -39,13 +44,13 @@ $colors: (
     $shade-value in $shades {
 
       // text color
-      .clr-#{$color}-#{$shade} {
-        color: var(--clr-#{$color}-#{$shade});
+      .#{$prefix}-text-#{$color}-#{$shade} {
+        color: var(--#{$prefix}-clr-#{$color}-#{$shade});
       }
 
       // background color
-      .bg-#{$color}-#{$shade} {
-        background-color: var(--clr-#{$color}-#{$shade});
+      .#{$prefix}-bg-#{$color}-#{$shade} {
+        background-color: var(--#{$prefix}-clr-#{$color}-#{$shade});
       }
     }
   }

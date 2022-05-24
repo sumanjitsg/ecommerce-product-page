@@ -11,63 +11,62 @@
 
   <body>
     <!-- Header -->
-    <header class='header'>
-      <div class="container flex space-between align-center">
-        <!-- Menu, Logo group -->
-        <div class='flex gap-16'>
-          <button class='nav__btn nav__btn--open'></button>
-          <div>
-            <img src="assets/logo.svg" alt="sneakers logo">
-          </div>
-
-
-          <!-- Navigation -->
-          <nav class='sliding-modal hidden medium:visible'>
-            <div class='nav__container'>
-              <div>
-                <button class='nav__btn nav__btn--close'></button>
-              </div>
-              <ul class='nav__list'>
-                <li class='nav__list-item'>
-                  <a class='btn'>Collections</a>
-                </li>
-
-                <li class='nav__list-item'>
-                  <a class='btn'>Men</a>
-                </li>
-
-                <li class='nav__list-item'>
-                  <a class='btn'>Women</a>
-                </li>
-
-                <li class='nav__list-item'>
-                  <a class='btn'>About</a>
-                </li>
-
-                <li class='nav__list-item'>
-                  <a class='btn'>Contact</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+    <header class='w-[87%] mx-auto py-5 flex justify-between items-center'>
+      <!-- Menu, Logo group -->
+      <div class='flex gap-x-4'>
+        <button data-btn-open-side-nav>
+          <img src="assets/icon-menu.svg" alt="">
+        </button>
+        <div>
+          <img src="assets/logo.svg" alt="sneakers logo">
         </div>
+      </div>
 
-        <!-- Cart, Avatar group -->
-        <div class='flex gap-22 align-center'>
-          <button class='btn btn--transparent'>
-            <svg class='svg-block svg-gray-400 |
-                        icon-cart'>
-              <use href='#svg-icon-cart' />
-            </svg>
-          </button>
-          <div class='header__avatar'>
-            <img src="assets/image-avatar.png" alt="avatar image">
-          </div>
+      <!-- Cart, Avatar group -->
+      <div class='flex gap-x-5 items-center'>
+        <button>
+          <img src="assets/icon-cart.svg" alt="">
+        </button>
+        <div class='w-6'>
+          <img src="assets/image-avatar.png" alt="avatar image">
         </div>
       </div>
     </header>
 
-    <main class='pye-88'>
+    <!-- Side navigation -->
+    <aside class='fixed inset-0 sc-bg-gray-900 z-50 invisible' data-side-nav-container>
+      <nav class='max-w-[67%] min-h-full p-6 bg-white' data-side-nav-pane>
+        <!-- Close menu button -->
+        <button data-btn-close-side-nav>
+          <img src="assets/icon-close.svg" alt="">
+        </button>
+
+        <!-- Navigation list -->
+        <ul class='mt-12 space-y-5'>
+          <li>
+            <a class='font-bold text-18px leading-snug hover:underline cursor-pointer'>Collections</a>
+          </li>
+
+          <li>
+            <a class='font-bold text-18px leading-snug hover:underline cursor-pointer'>Men</a>
+          </li>
+
+          <li>
+            <a class='font-bold text-18px leading-snug hover:underline cursor-pointer'>Women</a>
+          </li>
+
+          <li>
+            <a class='font-bold text-18px leading-snug hover:underline cursor-pointer'>About</a>
+          </li>
+
+          <li>
+            <a class='font-bold text-18px leading-snug hover:underline cursor-pointer'>Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
       <article class='content'>
         <!-- Carousel -->
         <article class='carousel'>
@@ -115,67 +114,63 @@
           </ul>
         </article>
 
-        <article class='container pys-24'>
+        <article class='w-[87%] mx-auto pt-6 mb-10'>
           <!-- Product Details -->
           <section>
             <!-- Company name -->
-            <p class='clr-primary-400 fw-700 fs-200 uppercase ls-2'>Sneaker Company</p>
+            <p class='sc-text-orange-400 uppercase font-bold text-xs leading-tight tracking-[.17em]'>Sneaker Company</p>
+
             <!-- Product name -->
-            <h2 class='mys-20 clr-gray-700 fw-700 fs-700'>Fall Limited Edition Sneakers</h2>
+            <h2 class='mt-5 font-bold text-28px leading-none'>Fall Limited Edition Sneakers</h2>
+
             <!-- Product description -->
-            <p class='mys-16 clr-gray-400 fs-300 lh-600 test'>
+            <p class='mt-4 sc-text-gray-400 text-15px leading-relaxed'>
               These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer
               sole,
               they'll withstand everything the weather can offer.
             </p>
 
             <!-- Discounted price, Offer, Original price -->
-            <div class='mys-24 flex align-center space-between fw-700'>
-              <div class="flex gap-16 align-center">
-                <p class='fs-700'>$125.00</p>
-                <p class='fs-400 clr-primary-400 px-8 py-4 bg-primary-100 br-6'>50%</p>
+            <div class='mt-6 flex items-center justify-between'>
+              <div class="flex gap-x-4 items-center">
+                <p class='font-bold text-28px leading-tight'>$125.00</p>
+                <p class='sc-text-orange-400 font-bold text-base leading-tight px-2 py-1 sc-bg-orange-100 rounded-md'>
+                  50%</p>
               </div>
-              <p class='line-through clr-gray-300'>$250.00</p>
+              <p class='line-through sc-text-gray-300 font-bold text-base leading-relaxed'>$250.00</p>
             </div>
           </section>
 
           <!-- Action items -->
-          <section class='mys-24'>
+          <section class='mt-6'>
             <!-- Quantity -->
-            <div class='px-24 py-18 bg-gray-100 br-10 flex align-center space-between'>
-              <button class='btn btn--transparent'>
-                <img src="assets/icon-minus.svg" alt="minus">
+            <div class='px-6 py-4 sc-bg-gray-100 rounded-lg flex items-center justify-between'>
+              <button>
+                <img src="assets/icon-minus.svg" alt="">
               </button>
-              <p class='fw-700'>
+              <p class='font-bold text-base leading-tight'>
                 0
               </p>
-              <button class='btn btn--transparent'>
-                <img src="assets/icon-plus.svg" alt="plus">
+              <button>
+                <img src="assets/icon-plus.svg" alt="">
               </button>
             </div>
 
             <!-- Add to cart button -->
-            <button class='mys-16 flex center gap-16 |
-                           btn btn--primary btn--box-shad-prim-400'>
-              <svg class='svg-current-color |
-                          icon-cart'>
-                <use href='#svg-icon-cart' />
+            <button
+              class='mt-4 sc-bg-orange-400 rounded-lg py-5 w-full flex items-center justify-center gap-x-4 shadow-[0_1.25rem_3.125rem_-1.25rem_var(--sc-clr-orange-400)]'>
+              <svg width="22" height="20" fill='#fff' xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill-rule="nonzero" />
               </svg>
-              <div>Add to cart</div>
+              <div class='text-white font-bold text-base leading-tight'>
+                Add to cart</div>
             </button>
           </section>
         </article>
       </article>
     </main>
-
-    <!-- Svg icon cart template -->
-    <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
-      <symbol id='svg-icon-cart'>
-        <path
-          d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
-          fill-rule="nonzero" />
-      </symbol>
-    </svg>
   </body>
 
 </html>
