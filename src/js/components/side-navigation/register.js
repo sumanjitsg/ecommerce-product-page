@@ -1,5 +1,5 @@
 import { openButton, closeButton, navContainer } from './dom';
-import { openNav, closeNav, removeNav } from './listeners';
+import { openNav, closeNav, removeNav } from './functions';
 
 // Event listeners
 

@@ -67,27 +67,38 @@
     </aside>
 
     <main>
-      <article class='content'>
+      <article>
         <!-- Carousel -->
-        <article class='carousel'>
-          <button class='carousel__btn carousel__btn--prev'></button>
-          <button class='carousel__btn carousel__btn--next'></button>
+        <article class='relative' data-carousel>
+          <button
+            class='absolute top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-gray-100 rounded-full left-4 focus:outline focus:outline-1 focus:outline-black'
+            data-carousel-button='prev'>
+            <img class='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-[60%]' src="assets/icon-previous.svg"
+              alt="">
+          </button>
+          <button
+            class='absolute top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-gray-100 rounded-full right-4 focus:outline focus:outline-1 focus:outline-black'
+            data-carousel-button='next'>
+            <img class='absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-[45%]' src="assets/icon-next.svg"
+              alt="">
+          </button>
 
-          <ul class='carousel__slide-list'>
-            <li class='carousel__slide carousel__slide--active'>
-              <img class='carousel__image' src="assets/image-product-1.jpg" alt="Shoes Product Image #1">
+          <!-- Slide list -->
+          <ul class='grid' data-carousel-slide-list>
+            <li class='row-start-1 col-start-1 aspect-landscape overflow-hidden' data-carousel-slide-active='true'>
+              <img class='object-cover' src="assets/image-product-1.jpg" alt="Shoes Product Image #1">
             </li>
 
-            <li class='carousel__slide'>
-              <img src="assets/image-product-2.jpg" alt="Shoes Product Image #2">
+            <li class='row-start-1 col-start-1 aspect-landscape overflow-hidden' data-carousel-slide-active='false'>
+              <img class='object-cover' src="assets/image-product-2.jpg" alt="Shoes Product Image #2">
             </li>
 
-            <li class='carousel__slide'>
-              <img src="assets/image-product-3.jpg" alt="Shoes Product Image #3">
+            <li class='row-start-1 col-start-1 aspect-landscape overflow-hidden' data-carousel-slide-active='false'>
+              <img class='object-cover' src="assets/image-product-3.jpg" alt="Shoes Product Image #3">
             </li>
 
-            <li class='carousel__slide'>
-              <img src="assets/image-product-4.jpg" alt="Shoes Product Image #4">
+            <li class='row-start-1 col-start-1 aspect-landscape overflow-hidden' data-carousel-slide-active='false'>
+              <img class='object-cover' src="assets/image-product-4.jpg" alt="Shoes Product Image #4">
             </li>
           </ul>
         </article>
