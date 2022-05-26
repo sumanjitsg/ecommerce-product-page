@@ -1,20 +1,9 @@
-export function changeActiveSlide(button) {
-  // get slide list
-  const slides = button
-    .closest('[data-carousel]')
-    .querySelector('[data-carousel-slide-list]');
-
+export function changeActiveSlide(slides, offset) {
   // get current active slide
   const current =
     slides.querySelector(
       '[data-carousel-slide-active="true"]'
     );
-
-  // get offset
-  const offset =
-    button.dataset.carouselButton === 'prev'
-      ? -1
-      : 1;
 
   // get slide at offset
   const slide = getSlideAtOffset(slides, current, offset);
@@ -26,6 +15,22 @@ export function changeActiveSlide(button) {
   slide.dataset
     .carouselSlideActive = 'true';
 };
+
+export function getParentSlides(button) {
+  return (
+    button
+      .closest('[data-carousel]')
+      .querySelector('[data-carousel-slide-list]')
+  );
+}
+
+export function getChangeOffset(button) {
+  return (
+    button.dataset.carouselButton === 'prev'
+      ? -1
+      : 1
+  );
+}
 
 function getSlideAtOffset(slides, slide, offset) {
   // get next slide index

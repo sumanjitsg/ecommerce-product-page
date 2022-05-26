@@ -1,8 +1,15 @@
 import { buttons } from './dom';
-import { changeActiveSlide } from './functions';
+import { getParentSlides, getChangeOffset, changeActiveSlide } from './functions';
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    changeActiveSlide(button);
+    // get parent slides
+    const slides = getParentSlides(button);
+
+    // get offset
+    const offset = getChangeOffset(button);
+
+    // change active slide
+    changeActiveSlide(slides, offset);
   });
 });
