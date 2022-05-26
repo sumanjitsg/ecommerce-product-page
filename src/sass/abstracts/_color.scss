@@ -13,8 +13,6 @@ $colors: (
   ),
 );
 
-$prefix: 'sc';
-
 // Generate CSS custom properties for all color shades
 @mixin customProps() {
 
@@ -26,7 +24,7 @@ $prefix: 'sc';
     // for each shade
     @each $shade,
     $shade-value in $shades {
-      --#{$prefix}-clr-#{$color}-#{$shade}: #{$shade-value};
+      --clr-#{$color}-#{$shade}: #{$shade-value};
     }
   }
 }
@@ -44,13 +42,13 @@ $prefix: 'sc';
     $shade-value in $shades {
 
       // text color
-      .#{$prefix}-text-#{$color}-#{$shade} {
-        color: var(--#{$prefix}-clr-#{$color}-#{$shade});
+      .text-#{$color}-#{$shade} {
+        color: var(--clr-#{$color}-#{$shade});
       }
 
       // background color
-      .#{$prefix}-bg-#{$color}-#{$shade} {
-        background-color: var(--#{$prefix}-clr-#{$color}-#{$shade});
+      .bg-#{$color}-#{$shade} {
+        background-color: var(--clr-#{$color}-#{$shade});
       }
     }
   }
