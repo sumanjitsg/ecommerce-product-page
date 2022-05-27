@@ -423,36 +423,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
-}.container {
-  width: 100%;
-}@media (min-width: 640px) {
-
-  .container {
-    max-width: 640px;
-  }
-}@media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
-  }
-}@media (min-width: 850px) {
-
-  .container {
-    max-width: 850px;
-  }
-}@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
-  }
-}@media (min-width: 1536px) {
-
-  .container {
-    max-width: 1536px;
-  }
-}[data-side-nav-container].open{-webkit-animation:fadein 300ms ease-out forwards;animation:fadein 300ms ease-out forwards}@-webkit-keyframes fadein{0%{opacity:0}100%{opacity:1}}@keyframes fadein{0%{opacity:0}100%{opacity:1}}[data-side-nav-container].closed{-webkit-animation:fadeout 300ms ease-out forwards;animation:fadeout 300ms ease-out forwards}@-webkit-keyframes fadeout{100%{opacity:0}0%{opacity:1}}@keyframes fadeout{100%{opacity:0}0%{opacity:1}}[data-side-nav-pane].open{-webkit-animation:slidein 300ms ease-out forwards;animation:slidein 300ms ease-out forwards}@-webkit-keyframes slidein{0%{transform:translateX(-100%)}100%{transform:translateX(0%)}}@keyframes slidein{0%{transform:translateX(-100%)}100%{transform:translateX(0%)}}[data-side-nav-pane].closed{-webkit-animation:slideout 300ms ease-out forwards;animation:slideout 300ms ease-out forwards}@-webkit-keyframes slideout{100%{transform:translateX(-100%)}0%{transform:translateX(0%)}}@keyframes slideout{100%{transform:translateX(-100%)}0%{transform:translateX(0%)}}[data-carousel-slide-active]{opacity:0;transition:opacity 200ms ease-in-out;transition-delay:200ms}[data-carousel-slide-active=true]{opacity:1;z-index:1;transition-delay:0ms}.visible {
-  visibility: visible;
-}.invisible {
+}@-webkit-keyframes fadein{0%{opacity:0}100%{opacity:1}}@keyframes fadein{0%{opacity:0}100%{opacity:1}}@-webkit-keyframes fadeout{100%{opacity:0}0%{opacity:1}}@keyframes fadeout{100%{opacity:0}0%{opacity:1}}@-webkit-keyframes slidein{0%{transform:translateX(-100%)}100%{transform:translateX(0%)}}@keyframes slidein{0%{transform:translateX(-100%)}100%{transform:translateX(0%)}}@-webkit-keyframes slideout{100%{transform:translateX(-100%)}0%{transform:translateX(0%)}}@keyframes slideout{100%{transform:translateX(-100%)}0%{transform:translateX(0%)}}[data-carousel-slide-active]{opacity:0;transition:opacity 200ms ease-in-out;transition-delay:200ms}[data-carousel-slide-active=true]{opacity:1;z-index:1;transition-delay:0ms}.invisible {
   visibility: hidden;
 }.fixed {
   position: fixed;
