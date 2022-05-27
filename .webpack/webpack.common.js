@@ -33,6 +33,7 @@ const common = {
     }),
   ],
   devServer: {
+    watchFiles: [ 'src/**/*' ],
     static: {
       directory: DIST_PATH,
     },
