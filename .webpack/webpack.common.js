@@ -8,7 +8,7 @@ const DIST_PATH = path.resolve('dist');
 const common = {
   context: path.join(SRC_PATH, 'app'),
   entry: {
-    main: './main.js',
+    main: './main.ts',
   },
   output: {
     path: DIST_PATH,
@@ -16,6 +16,11 @@ const common = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
       {
         test: /\.html$/,
         loader: 'html-loader',
@@ -25,6 +30,9 @@ const common = {
         type: 'asset/resource',
       },
     ]
+  },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ],
   },
   plugins: [
     new HtmlWebpackPlugin({
