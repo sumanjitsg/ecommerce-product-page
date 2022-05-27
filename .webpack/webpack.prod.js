@@ -1,13 +1,14 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const path = require('path');
 const { merge } = require('webpack-merge');
-const { DIST_PATH, common } = require('./webpack.common');
+const { common, SRC_PATH, DIST_PATH } = require('./webpack.common');
+
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: 'js/[name].[contenthash].bundle.js',
-    assetModuleFilename: 'assets/[name].[contenthash][ext]',
     clean: true,
   },
   module: {
@@ -17,6 +18,7 @@ module.exports = merge(common, {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          'postcss-loader',
           'sass-loader',
         ],
       },
@@ -24,19 +26,19 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.[contenthash].css'
+      filename: 'css/styles.[contenthash].css'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.join(SRC_PATH, 'assets'),
+          to: path.join(DIST_PATH, 'assets'/*, '[name].[contenthash][ext]'*/),
+        },
+      ],
     }),
   ],
   devServer: {
-    static: {
-      directory: DIST_PATH,
-    },
     port: 3030,
-    open: {
-      app: {
-        name: 'chrome',
-      },
-    },
     compress: true,
   },
 });

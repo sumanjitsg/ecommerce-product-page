@@ -1,13 +1,14 @@
 const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const SRC_PATH = path.resolve(__dirname, '../src');
-const DIST_PATH = path.resolve(__dirname, '../dist');
+const SRC_PATH = path.resolve('src');
+const DIST_PATH = path.resolve('dist');
 
 const common = {
-  context: SRC_PATH,
+  context: path.join(SRC_PATH, 'app'),
   entry: {
-    index: './js/index.js',
+    app: './app.js',
   },
   output: {
     path: DIST_PATH,
@@ -15,21 +16,29 @@ const common = {
   module: {
     rules: [
       {
-        test: /\.html$/,
-        use: [ 'html-loader' ],
-      },
-      {
-        test: /\.(svg|png|jpg)$/i,
-        type: 'asset/resource',
+        test: /\.hbs$/,
+        use: [
+          'handlebars-loader',
+        ],
       },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: path.join(SRC_PATH, 'templates', 'index.hbs'),
       filename: 'index.html',
     }),
   ],
+  devServer: {
+    static: {
+      directory: DIST_PATH,
+    },
+    open: {
+      app: {
+        name: 'chrome',
+      },
+    },
+  },
 };
 
 module.exports = { SRC_PATH, DIST_PATH, common };

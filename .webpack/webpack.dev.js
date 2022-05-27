@@ -1,13 +1,14 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
+const path = require('path');
 const { merge } = require('webpack-merge');
-const { common } = require('./webpack.common');
+const { common, SRC_PATH, DIST_PATH } = require('./webpack.common');
+
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: 'js/[name].bundle.js',
-    assetModuleFilename: 'assets/[name][ext]',
+    clean: true,
   },
   devtool: 'source-map',
   module: {
@@ -15,7 +16,7 @@ module.exports = merge(common, {
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
           'postcss-loader',
           'sass-loader',
@@ -24,12 +25,16 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles.css'
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.join(SRC_PATH, 'assets'),
+          to: path.join(DIST_PATH, 'assets'),
+        },
+      ],
     }),
   ],
-  watch: true,
-  watchOptions: {
-    ignored: /node_modules/,
+  devServer: {
+    port: 3000,
   },
 });
