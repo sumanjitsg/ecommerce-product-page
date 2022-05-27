@@ -1,14 +1,11 @@
-const path = require('path');
 const { merge } = require('webpack-merge');
-const { common, SRC_PATH, DIST_PATH } = require('./webpack.common');
-
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { common } = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: 'js/[name].bundle.js',
-    clean: true,
+    assetModuleFilename: 'assets/[name][ext]',
   },
   devtool: 'source-map',
   module: {
@@ -24,16 +21,6 @@ module.exports = merge(common, {
       },
     ]
   },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.join(SRC_PATH, 'assets'),
-          to: path.join(DIST_PATH, 'assets'),
-        },
-      ],
-    }),
-  ],
   devServer: {
     port: 3000,
   },

@@ -1,4 +1,4 @@
-import '../sass/styles.scss';
+import '../styles/main.scss';
 
 import './components/side-navigation/register';
 import './components/carousel/register';

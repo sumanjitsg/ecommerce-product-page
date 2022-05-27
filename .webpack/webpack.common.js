@@ -8,24 +8,27 @@ const DIST_PATH = path.resolve('dist');
 const common = {
   context: path.join(SRC_PATH, 'app'),
   entry: {
-    app: './app.js',
+    main: './main.js',
   },
   output: {
     path: DIST_PATH,
+    clean: true,
   },
   module: {
     rules: [
       {
-        test: /\.hbs$/,
-        use: [
-          'handlebars-loader',
-        ],
+        test: /\.html$/,
+        loader: 'html-loader',
+      },
+      {
+        test: /\.(png|svg|jp[e]g)$/i,
+        type: 'asset/resource',
       },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(SRC_PATH, 'templates', 'index.hbs'),
+      template: path.join(SRC_PATH, 'index.html'),
       filename: 'index.html',
     }),
   ],
