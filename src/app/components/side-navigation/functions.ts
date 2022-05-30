@@ -1,28 +1,25 @@
-import { navContainer, navPane } from './dom';
+import { navContainer, navPane } from "./dom";
 
 // Open nav
-export const openNav = () => {
+export function openNav() {
   // Turn nav visible
-  navContainer.classList.remove( 'invisible' );
+  navContainer.classList.remove("invisible");
 
-  // Add open classes
-  navContainer.classList.add( 'open' );
-  navPane.classList.add( 'open' );
-};
+  navContainer.dataset.sideNavContainer = "open";
+  navPane.dataset.sideNavPane = "open";
+}
 
 // Close nav
-export const closeNav = () => {
-  // Remove open classes. Add closed classes
-  navPane.classList.replace( 'open', 'closed' );
-  navContainer.classList.replace( 'open', 'closed' );
-};
+export function closeNav() {
+  navPane.dataset.sideNavPane = "closed";
+  navContainer.dataset.sideNavContainer = "closed";
+}
 
 // Remove nav
-export const removeNav = () => {
-  // Remove closed classes
-  navPane.classList.remove( 'closed' );
-  navContainer.classList.remove( 'closed' );
+export function removeNav() {
+  navPane.dataset.sideNavContainer = "";
+  navContainer.dataset.sideNavPane = "";
 
   // Turn nav invisible
-  navContainer.classList.add( 'invisible' );
-};
+  navContainer.classList.add("invisible");
+}
