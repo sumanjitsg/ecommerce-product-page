@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "live-server": "live-server dist --port=3000 --browser=chrome",
     "dev:build": "webpack --config .webpack/webpack.dev.js",
     "dev:serve": "webpack serve --config .webpack/webpack.dev.js",
     "dev:analyze": "webpack --config .webpack/webpack.dev.js --analyze",
