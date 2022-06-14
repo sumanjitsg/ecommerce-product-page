@@ -71,12 +71,25 @@
 
       <!-- Cart, Avatar group -->
       <div class="flex gap-x-5 items-center">
-        <button>
-          <img src="assets/icon-cart.svg" alt="" />
-        </button>
-        <div class="w-6">
-          <img src="assets/image-avatar.png" alt="avatar image" />
+        <div class="relative flex">
+          <div
+            class="absolute -right-1/4 -translate-y-1/2 px-[6px] rounded-full bg-orange-400 hidden"
+            data-cart-bubble
+          >
+            <p
+              class="text-white font-bold text-[10px] leading-tight"
+              data-cart-bubble-item-count
+            >
+              0
+            </p>
+          </div>
+          <button data-cart>
+            <img src="assets/icon-cart.svg" alt="" />
+          </button>
         </div>
+        <button class="w-6">
+          <img src="assets/image-avatar.png" alt="avatar image" />
+        </button>
       </div>
     </header>
 
@@ -134,9 +147,68 @@
       </nav>
     </aside>
 
-    <main class="lg:w-[87%] lg:mx-auto">
+    <main class="lg:w-[87%] lg:mx-auto relative">
       <!-- Splitter -->
       <div class="lg:h-px lg:bg-gray-200 lg:mt-3 lg:mb-22"></div>
+
+      <!-- Cart dialog -->
+      <!-- add opacity 0.5 to box shadow -->
+      <!-- ml calculation works, shift to css file -->
+      <div
+        class="absolute top-2 left-0 right-0 mr-2 ml-[max(8px, calc(100vw - 22rem))] rounded-[10px] z-30 max-w-[22rem] bg-white shadow-[0_1.25rem_3.125rem_-1.25rem_var(--clr-gray-700)] hidden"
+        data-cart-dialog
+      >
+        <div class="px-6 py-6">
+          <h2 class="font-bold leading-tight">Cart</h2>
+        </div>
+
+        <div class="h-px bg-gray-200"></div>
+
+        <div>
+          <div
+            class="flex items-center justify-center min-h-[12rem]"
+            data-cart-dialog-empty
+          >
+            <p class="text-gray-400 font-bold leading-relaxed">
+              You cart is empty.
+            </p>
+          </div>
+
+          <div class="min-h-[12rem] hidden" data-cart-dialog-items>
+            <div class="px-6 py-6 flex items-center justify-between">
+              <div class="w-[50px] rounded-[4px] overflow-hidden">
+                <img src="assets/image-product-1-thumbnail.jpg" alt="" />
+              </div>
+              <div>
+                <p class="text-gray-400 leading-relaxed">
+                  Fall Limited Edition Snickers
+                </p>
+                <div class="flex gap-x-2">
+                  <p class="text-gray-400 leading-relaxed">
+                    $125.00 x <span data-cart-dialog-item-count></span>
+                  </p>
+                  <p
+                    class="font-bold text-gray-700 leading-relaxed"
+                    data-cart-dialog-total-cost
+                  ></p>
+                </div>
+              </div>
+              <div>
+                <button data-remove-cart-items>
+                  <img src="assets/icon-delete.svg" alt="" />
+                </button>
+              </div>
+            </div>
+            <div class="mx-6 mb-8">
+              <button
+                class="w-full py-4 rounded-[10px] bg-orange-400 font-bold leading-tight text-white"
+              >
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <article
         class="flex flex-wrap lg:flex-nowrap lg:gap-x-fluid lg:items-center lg:w-11/12 lg:mx-auto"
@@ -145,7 +217,7 @@
           <!-- Carousel -->
           <article class="relative lg:hidden" data-carousel>
             <button
-              class="absolute top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-gray-100 rounded-full left-4 focus:outline focus:outline-1 focus:outline-black"
+              class="absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-gray-100 rounded-full left-4 focus:outline focus:outline-1 focus:outline-black"
               data-carousel-button="prev"
             >
               <img
@@ -420,11 +492,11 @@
             <div
               class="px-6 py-4 bg-gray-100 rounded-lg flex items-center justify-between lg:w-5/12"
             >
-              <button>
+              <button data-decrement-item-count>
                 <img src="assets/icon-minus.svg" alt="" />
               </button>
-              <p class="font-bold text-base leading-tight">0</p>
-              <button>
+              <p class="font-bold text-base leading-tight" data-item-count>1</p>
+              <button data-increment-item-count>
                 <img src="assets/icon-plus.svg" alt="" />
               </button>
             </div>
@@ -432,6 +504,7 @@
             <!-- Add to cart button -->
             <button
               class="mt-4 lg:mt-0 bg-orange-400 rounded-lg py-5 w-full flex items-center justify-center gap-x-4 shadow-[0_1.25rem_3.125rem_-1.25rem_var(--clr-orange-400)] lg:w-7/12"
+              data-add-to-cart
             >
               <svg
                 width="22"
