@@ -15,10 +15,10 @@
   <body>
     <!-- Header -->
     <header class="w-[87%] mx-auto py-5 flex justify-between items-center">
-      <!-- Menu, Logo group -->
-      <div class="flex gap-x-4">
+      <!-- Menu, Logo, navigation group -->
+      <div class="flex gap-x-4 lg:gap-x-14 items-center">
         <button
-          class="focus:outline focus:outline-1 focus:outline-black lg:hidden"
+          class="focus:outline focus:outline-1 focus:outline-black lg:hidden pb-px"
           data-btn-open-side-nav
         >
           <img src="assets/icon-menu.svg" alt="" />
@@ -29,39 +29,40 @@
         </div>
 
         <!-- Navigation List -->
-        <nav class="ml-14 hidden lg:block">
-          <ul class="space-x-8">
-            <li class="inline-block">
+        <nav class="hidden lg:block">
+          <ul class="flex gap-x-8">
+            <!-- add underline offset, to sidebar links as well -->
+            <li>
               <a
-                class="text-gray-400 text-15px leading-relaxed hover:underline cursor-pointer"
+                class="text-gray-400 text-15px leading-none hover:underline cursor-pointer"
                 >Collections</a
               >
             </li>
 
-            <li class="inline-block">
+            <li>
               <a
-                class="text-gray-400 text-15px leading-relaxed hover:underline cursor-pointer"
+                class="text-gray-400 text-15px leading-none hover:underline cursor-pointer"
                 >Men</a
               >
             </li>
 
-            <li class="inline-block">
+            <li>
               <a
-                class="text-gray-400 text-15px leading-relaxed hover:underline cursor-pointer"
+                class="text-gray-400 text-15px leading-none hover:underline cursor-pointer"
                 >Women</a
               >
             </li>
 
-            <li class="inline-block">
+            <li>
               <a
-                class="text-gray-400 text-15px leading-relaxed hover:underline cursor-pointer"
+                class="text-gray-400 text-15px leading-none hover:underline cursor-pointer"
                 >About</a
               >
             </li>
 
-            <li class="inline-block">
+            <li>
               <a
-                class="text-gray-400 text-15px leading-relaxed hover:underline cursor-pointer"
+                class="text-gray-400 text-15px leading-none hover:underline cursor-pointer"
                 >Contact</a
               >
             </li>
@@ -84,6 +85,7 @@
             </p>
           </div>
           <button data-cart>
+            <!-- cart color black on focus -->
             <img src="assets/icon-cart.svg" alt="" />
           </button>
         </div>
@@ -339,11 +341,12 @@
 
           <!-- Lightbox gallery -->
           <div
-            class="hidden lg:flex items-center justify-center fixed inset-0 bg-gray-900"
+            class="hidden items-center justify-center fixed inset-0 bg-gray-900"
+            data-lightbox
           >
-            <article data-lightbox>
+            <article>
               <div class="mb-6 flex justify-end">
-                <button>
+                <button data-close-lightbox>
                   <svg
                     class="scale-150"
                     width="14"
@@ -359,9 +362,7 @@
                 </button>
               </div>
               <div class="relative">
-                <div
-                  class="max-w-xl aspect-square overflow-hidden rounded-2xl cursor-pointer"
-                >
+                <div class="max-w-xl aspect-square overflow-hidden rounded-2xl">
                   <img
                     src="assets/image-product-1.jpg"
                     alt=""
@@ -492,6 +493,7 @@
             <div
               class="px-6 py-4 bg-gray-100 rounded-lg flex items-center justify-between lg:w-5/12"
             >
+              <!-- increase surface area of minus and plus buttons -->
               <button data-decrement-item-count>
                 <img src="assets/icon-minus.svg" alt="" />
               </button>

@@ -1,4 +1,10 @@
-import { thumbnails, previewImage, buttons } from "./dom";
+import {
+  thumbnails,
+  previewImage,
+  buttons,
+  closeLightboxButton,
+  lightbox,
+} from "./dom";
 import {
   updatePreview,
   getParentSlides,
@@ -30,3 +36,9 @@ buttons.forEach((button) => {
     updatePreview(slideImage, previewImage);
   });
 });
+
+function closeLightbox() {
+  lightbox.classList.replace("flex", "hidden");
+}
+
+closeLightboxButton.addEventListener("click", closeLightbox);

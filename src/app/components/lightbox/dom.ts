@@ -1,5 +1,9 @@
 export const lightbox: HTMLElement = document.querySelector("[data-lightbox]");
 
+export const closeLightboxButton: HTMLImageElement = lightbox.querySelector(
+  "[data-close-lightbox]"
+);
+
 export const previewImage: HTMLImageElement = lightbox.querySelector(
   "[data-lightbox-preview-image]"
 );
