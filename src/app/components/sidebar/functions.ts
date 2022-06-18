@@ -1,9 +1,11 @@
-import { navContainer, navPane } from "./dom";
+import { navContainer, navPane, tabStartEl } from "./dom";
 
 // Open nav
 export function openNav() {
   // Turn nav visible
   navContainer.classList.remove("invisible");
+
+  tabStartEl.focus();
 
   navContainer.dataset.sideNavContainer = "open";
   navPane.dataset.sideNavPane = "open";

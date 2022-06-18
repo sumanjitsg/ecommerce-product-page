@@ -105,6 +105,7 @@
         <button
           class="focus:outline focus:outline-1 focus:outline-black"
           data-btn-close-side-nav
+          data-tab-start
         >
           <img src="assets/icon-close.svg" alt="" />
         </button>
@@ -114,6 +115,7 @@
           <li>
             <a
               class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+              tabindex="0"
               >Collections</a
             >
           </li>
@@ -121,6 +123,7 @@
           <li>
             <a
               class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+              tabindex="0"
               >Men</a
             >
           </li>
@@ -128,6 +131,7 @@
           <li>
             <a
               class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+              tabindex="0"
               >Women</a
             >
           </li>
@@ -135,6 +139,7 @@
           <li>
             <a
               class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+              tabindex="0"
               >About</a
             >
           </li>
@@ -142,6 +147,8 @@
           <li>
             <a
               class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+              tabindex="0"
+              data-tab-end
               >Contact</a
             >
           </li>
@@ -219,7 +226,7 @@
           <!-- Carousel -->
           <article class="relative lg:hidden" data-carousel>
             <button
-              class="absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-gray-100 rounded-full left-4 focus:outline focus:outline-1 focus:outline-black"
+              class="absolute top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-gray-100 rounded-full left-4 focus:outline-black"
               data-carousel-button="prev"
             >
               <img
@@ -229,7 +236,7 @@
               />
             </button>
             <button
-              class="absolute top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-gray-100 rounded-full right-4 focus:outline focus:outline-1 focus:outline-black"
+              class="absolute top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-gray-100 rounded-full right-4 focus:outline-black"
               data-carousel-button="next"
             >
               <img
