@@ -1,4 +1,4 @@
-import { navContainer, navPane, tabStartEl } from "./dom";
+import { navContainer, navPane, openButton, tabStartEl } from "./dom";
 
 // Open nav
 export function openNav() {
@@ -15,6 +15,7 @@ export function openNav() {
 export function closeNav() {
   navPane.dataset.sideNavPane = "closed";
   navContainer.dataset.sideNavContainer = "closed";
+  openButton.focus();
 }
 
 // Remove nav
