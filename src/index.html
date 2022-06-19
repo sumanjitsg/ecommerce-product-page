@@ -18,6 +18,7 @@
       <!-- Menu, Logo, navigation group -->
       <div class="flex gap-x-4 lg:gap-x-14 items-center">
         <button
+          aria-label="Open site navigation sidebar"
           class="focus:outline focus:outline-1 focus:outline-black lg:hidden pb-px"
           data-btn-open-side-nav
         >
@@ -29,7 +30,7 @@
         </div>
 
         <!-- Navigation List -->
-        <nav class="hidden lg:block">
+        <nav aria-label="Site" class="hidden lg:block">
           <ul class="flex gap-x-8">
             <!-- add underline offset, to sidebar links as well -->
             <li>
@@ -77,7 +78,7 @@
 
       <!-- Cart, Avatar group -->
       <div class="flex gap-x-5 items-center">
-        <div class="relative flex">
+        <div aria-label="Cart" class="relative flex">
           <div
             class="absolute -right-1/4 -translate-y-1/2 px-[6px] rounded-full bg-orange-400 hidden"
             data-cart-bubble
@@ -89,26 +90,28 @@
               0
             </p>
           </div>
-          <button data-cart>
+          <button aria-label="Cart, 0 items, Open cart" data-cart>
             <!-- cart color black on focus -->
             <img src="assets/icon-cart.svg" alt="" />
           </button>
         </div>
-        <button class="w-6">
+        <a href="" aria-label="Open user account page" class="w-6">
           <img src="assets/image-avatar.png" alt="avatar image" />
-        </button>
+        </a>
       </div>
     </header>
 
     <!-- Side navigation -->
-    <aside
-      class="fixed inset-0 bg-gray-900 z-50 invisible lg:hidden"
+    <div
+      class="fixed inset-0 bg-gray-900 z-50 -translate-x-full lg:hidden"
       data-side-nav-container
     >
-      <nav class="max-w-[67%] min-h-full p-6 bg-white" data-side-nav-pane>
+      <div class="max-w-[67%] min-h-full p-6 bg-white" data-side-nav-pane>
         <!-- Close menu button -->
         <button
+          aria-label="Close sidebar"
           class="focus:outline focus:outline-1 focus:outline-black"
+          tabindex="-1"
           data-btn-close-side-nav
           data-tab-start
         >
@@ -116,50 +119,62 @@
         </button>
 
         <!-- Navigation list -->
-        <ul class="mt-12 space-y-5">
-          <li>
-            <a
-              class="font-bold text-lg leading-snug hover:underline cursor-pointer"
-              tabindex="0"
-              >Collections</a
-            >
-          </li>
+        <nav aria-label="Site">
+          <ul class="mt-12 space-y-5">
+            <li>
+              <a
+                href=""
+                aria-label="Go to All Collections page"
+                class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+                tabindex="-1"
+                >Collections</a
+              >
+            </li>
 
-          <li>
-            <a
-              class="font-bold text-lg leading-snug hover:underline cursor-pointer"
-              tabindex="0"
-              >Men</a
-            >
-          </li>
+            <li>
+              <a
+                href=""
+                aria-label="Go to Men's Collection page"
+                class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+                tabindex="-1"
+                >Men</a
+              >
+            </li>
 
-          <li>
-            <a
-              class="font-bold text-lg leading-snug hover:underline cursor-pointer"
-              tabindex="0"
-              >Women</a
-            >
-          </li>
+            <li>
+              <a
+                href=""
+                aria-label="Go to Women's Colection page"
+                class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+                tabindex="-1"
+                >Women</a
+              >
+            </li>
 
-          <li>
-            <a
-              class="font-bold text-lg leading-snug hover:underline cursor-pointer"
-              tabindex="0"
-              >About</a
-            >
-          </li>
+            <li>
+              <a
+                href=""
+                aria-label="Go to About page"
+                class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+                tabindex="-1"
+                >About</a
+              >
+            </li>
 
-          <li>
-            <a
-              class="font-bold text-lg leading-snug hover:underline cursor-pointer"
-              tabindex="0"
-              data-tab-end
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </aside>
+            <li>
+              <a
+                href=""
+                aria-label="Go to Contact page"
+                class="font-bold text-lg leading-snug hover:underline cursor-pointer"
+                tabindex="-1"
+                data-tab-end
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
     <main class="lg:w-[87%] lg:mx-auto relative">
       <!-- Splitter -->
@@ -304,6 +319,7 @@
               <img
                 src="assets/image-product-1.jpg"
                 alt=""
+                tabindex="0"
                 data-gallery-preview-image
               />
             </div>
@@ -315,6 +331,7 @@
                 <img
                   src="assets/image-product-1-thumbnail.jpg"
                   alt=""
+                  tabindex="0"
                   data-gallery-thumbnail-image
                 />
               </li>
@@ -325,6 +342,7 @@
                 <img
                   src="assets/image-product-2-thumbnail.jpg"
                   alt=""
+                  tabindex="0"
                   data-gallery-thumbnail-image
                 />
               </li>
@@ -335,6 +353,7 @@
                 <img
                   src="assets/image-product-3-thumbnail.jpg"
                   alt=""
+                  tabindex="0"
                   data-gallery-thumbnail-image
                 />
               </li>
@@ -345,6 +364,7 @@
                 <img
                   src="assets/image-product-4-thumbnail.jpg"
                   alt=""
+                  tabindex="0"
                   data-gallery-thumbnail-image
                 />
               </li>

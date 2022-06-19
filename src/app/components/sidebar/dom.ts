@@ -4,7 +4,7 @@ export const navContainer: HTMLElement = document.querySelector(
 );
 
 // Side nav pane
-export const navPane: HTMLElement = document.querySelector(
+export const navPane: HTMLElement = navContainer.querySelector(
   "[data-side-nav-pane]"
 );
 
@@ -14,14 +14,16 @@ export const openButton: HTMLElement = document.querySelector(
 );
 
 // Close side nav button
-export const closeButton: HTMLElement = navContainer.querySelector(
+export const closeButton: HTMLElement = navPane.querySelector(
   "[data-btn-close-side-nav]"
 );
 
+// todo: better querySelector, probably add data- attr to all tabbable elements
+export const links: NodeListOf<HTMLElement> = navPane.querySelectorAll("a");
+
 // First tabbable child element
 export const tabStartEl: HTMLElement =
-  navContainer.querySelector("[data-tab-start]");
+  navPane.querySelector("[data-tab-start]");
 
 // Last tabbable child element
-export const tabEndEl: HTMLElement =
-  navContainer.querySelector("[data-tab-end]");
+export const tabEndEl: HTMLElement = navPane.querySelector("[data-tab-end]");

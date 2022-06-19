@@ -30,7 +30,14 @@ function decrementCount() {
 
 function addToCart() {
   cartItemCount += count;
+
   cartBubbleItemCount.textContent = cartItemCount.toString();
+  // todo: aria live region probably (shift screen reader focus on items added)
+  // todo: re-use label text, used in html and here
+  cartButton.ariaLabel = `Cart, ${
+    cartItemCount === 1 ? "1 item" : `${cartItemCount} items`
+  }, Open cart`;
+
   cartDialogItemCount.textContent = cartItemCount.toString();
   cartDialogTotalCost.textContent = `$${125 * cartItemCount}.00`;
 

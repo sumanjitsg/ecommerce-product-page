@@ -1,9 +1,21 @@
-import { navContainer, navPane, openButton, tabStartEl } from "./dom";
+import {
+  closeButton,
+  links,
+  navContainer,
+  navPane,
+  openButton,
+  tabStartEl,
+} from "./dom";
 
 // Open nav
 export function openNav() {
   // Turn nav visible
-  navContainer.classList.remove("invisible");
+  navContainer.classList.remove("-translate-x-full");
+
+  closeButton.tabIndex = 0;
+  links.forEach((link) => {
+    link.tabIndex = 0;
+  });
 
   tabStartEl.focus();
 
@@ -24,5 +36,10 @@ export function removeNav() {
   navContainer.dataset.sideNavPane = "";
 
   // Turn nav invisible
-  navContainer.classList.add("invisible");
+  navContainer.classList.add("-translate-x-full");
+
+  closeButton.tabIndex = -1;
+  links.forEach((link) => {
+    link.tabIndex = -1;
+  });
 }
