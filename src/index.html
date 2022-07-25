@@ -16,7 +16,7 @@
     <!-- Header -->
     <header class="w-[87%] mx-auto py-5 flex justify-between items-center">
       <!-- Menu, Logo, navigation group -->
-      <div class="flex gap-x-4 lg:gap-x-14 items-center">
+      <div class="flex gap-x-4 lg:gap-x-14 items-end">
         <button
           aria-label="Open site navigation sidebar"
           class="focus:outline focus:outline-1 focus:outline-black lg:hidden pb-px"
@@ -32,7 +32,7 @@
         <!-- Navigation List -->
         <nav aria-label="Site" class="hidden lg:block">
           <ul class="flex gap-x-8">
-            <!-- add underline offset, to sidebar links as well -->
+            <!-- todo: add underline offset, to sidebar links as well -->
             <li>
               <a
                 class="text-gray-400 text-15px leading-none hover:underline cursor-pointer"
@@ -79,6 +79,7 @@
       <!-- Cart, Avatar group -->
       <div class="flex gap-x-5 items-center">
         <div aria-label="Cart" class="relative flex">
+          <!-- todo: hidden or invisible -->
           <div
             class="absolute -right-1/4 -translate-y-1/2 px-[6px] rounded-full bg-orange-400 hidden"
             data-cart-bubble
@@ -181,8 +182,8 @@
       <div class="lg:h-px lg:bg-gray-200 lg:mt-3 lg:mb-22"></div>
 
       <!-- Cart dialog -->
-      <!-- add opacity 0.5 to box shadow -->
-      <!-- ml calculation works, shift to css file -->
+      <!-- todo: add opacity 0.5 to box shadow -->
+      <!-- todo: ml calculation works, shift to css file -->
       <div
         class="absolute top-2 left-0 right-0 mr-2 ml-[max(8px, calc(100vw - 22rem))] rounded-[10px] z-30 max-w-[22rem] bg-white shadow-[0_1.25rem_3.125rem_-1.25rem_var(--clr-gray-700)] hidden"
         data-cart-dialog
