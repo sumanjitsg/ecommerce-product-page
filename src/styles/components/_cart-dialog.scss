@@ -1,0 +1,8 @@
+.cart-dialog {
+  width: min(100% - 1rem, 21.5rem);
+  margin-left: auto;
+  margin-right: 0.5rem;
+  // todo: add opacity 0.5 to box shadow color
+  box-shadow: 0 1.25rem 3.125rem -1.25rem var(--clr-gray-700);
+  @apply absolute top-2 left-0 right-0 rounded-[.625rem] z-30 bg-white;
+}

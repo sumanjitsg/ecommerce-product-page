@@ -91,11 +91,13 @@
               0
             </p>
           </div>
+          <!-- todo: should cart button have aria-expanded or aria-popup? -->
           <button aria-label="Cart, 0 items, Open cart" data-cart>
             <!-- cart color black on focus -->
             <img src="assets/icon-cart.svg" alt="" />
           </button>
         </div>
+        <!-- todo: should profile link be a button instead? -->
         <a href="" aria-label="Open user account page" class="w-6">
           <img src="assets/image-avatar.png" alt="avatar image" />
         </a>
@@ -182,12 +184,7 @@
       <div class="lg:h-px lg:bg-gray-200 lg:mt-3 lg:mb-22"></div>
 
       <!-- Cart dialog -->
-      <!-- todo: add opacity 0.5 to box shadow -->
-      <!-- todo: ml calculation works, shift to css file -->
-      <div
-        class="absolute top-2 left-0 right-0 mr-2 ml-[max(8px, calc(100vw - 22rem))] rounded-[10px] z-30 max-w-[22rem] bg-white shadow-[0_1.25rem_3.125rem_-1.25rem_var(--clr-gray-700)] hidden"
-        data-cart-dialog
-      >
+      <div class="cart-dialog hidden" data-cart-dialog>
         <div class="px-6 py-6">
           <h2 class="font-bold leading-tight">Cart</h2>
         </div>
