@@ -1,12 +1,10 @@
-@layer base {
-  html {
-    --base-font-size: 16;
-    --to-rem: var(--base-font-size) * 1rem;
-  }
+html {
+  --base-font-size: 16;
+  --to-rem: var(--base-font-size) * 1rem;
+}
 
-  button {
-    cursor: pointer;
-  }
+button {
+  cursor: pointer;
 }
 
 body {

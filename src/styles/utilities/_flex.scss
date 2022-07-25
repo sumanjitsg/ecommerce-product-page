@@ -1,5 +1,3 @@
-@layer utilities {
-  .gap-x-fluid {
-    column-gap: clamp(3rem, 12%, 8rem);
-  }
+.gap-x-fluid {
+  column-gap: clamp(3rem, 12%, 8rem);
 }

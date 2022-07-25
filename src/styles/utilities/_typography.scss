@@ -1,13 +1,11 @@
-@layer utilities {
-  .text-44px {
-    font-size: calc(44 / var(--to-rem));
-  }
+.text-44px {
+  font-size: calc(44 / var(--to-rem));
+}
 
-  .text-28px {
-    font-size: calc(28 / var(--to-rem));
-  }
+.text-28px {
+  font-size: calc(28 / var(--to-rem));
+}
 
-  .text-15px {
-    font-size: calc(15 / var(--to-rem));
-  }
+.text-15px {
+  font-size: calc(15 / var(--to-rem));
 }
