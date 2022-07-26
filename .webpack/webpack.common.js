@@ -1,14 +1,14 @@
-const path = require('path');
+const path = require("path");
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const SRC_PATH = path.resolve('src');
-const DIST_PATH = path.resolve('dist');
+const SRC_PATH = path.resolve("src");
+const DIST_PATH = path.resolve("dist");
 
 const common = {
-  context: path.join(SRC_PATH, 'app'),
+  context: path.join(SRC_PATH, "app"),
   entry: {
-    main: './main.ts',
+    main: "./main.ts",
   },
   output: {
     path: DIST_PATH,
@@ -18,36 +18,37 @@ const common = {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
         test: /\.html$/,
-        loader: 'html-loader',
+        loader: "html-loader",
       },
       {
         test: /\.(png|svg|jp[e]g)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
-    ]
+    ],
   },
   resolve: {
-    extensions: [ '.ts', '.js' ],
+    extensions: [".ts", ".js"],
+    modules: [SRC_PATH, "node_modules"],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(SRC_PATH, 'index.html'),
-      filename: 'index.html',
+      template: path.join(SRC_PATH, "index.html"),
+      filename: "index.html",
     }),
   ],
   devServer: {
-    watchFiles: [ 'src/**/*' ],
+    watchFiles: ["src/**/*"],
     static: {
       directory: DIST_PATH,
     },
     open: {
       app: {
-        name: 'chrome',
+        name: "chrome",
       },
     },
   },
