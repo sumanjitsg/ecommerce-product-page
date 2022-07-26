@@ -1,15 +1,31 @@
 import createStore from "lib/state-manager";
-import type { State, Action } from "lib/state-manager";
 
-export const store = createStore(reducer);
+const initialState = { counter: 0 };
+export type State = typeof initialState;
+
+export const store = createStore(reducer, initialState);
+
+type Action = {
+  type: string;
+};
 
 function reducer(state: State, action: Action): State {
   switch (action.type) {
-    case "counter/incrementBy": {
-      // todo: validate if count there in payload
-      // todo: increment counter value
-      const value = action.payload?.value;
-      return { ...state, counter: value };
+    case "counter/increment": {
+      return { ...state, counter: state.counter + 1 };
+    }
+
+    case "counter/decrement": {
+      // todo: no dec below 0
+      if (state.counter === 0) {
+        return state;
+      } else {
+        return { ...state, counter: state.counter - 1 };
+      }
+    }
+
+    case "counter/reset": {
+      return { ...state, counter: 0 };
     }
 
     default:
@@ -17,6 +33,20 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-export function incrementCounterBy(value: number) {
-  return { type: "counter/incrementBy", payload: { value: value } };
+export function incrementCounter(): Action {
+  return {
+    type: "counter/increment",
+  };
+}
+
+export function decrementCounter(): Action {
+  return {
+    type: "counter/decrement",
+  };
+}
+
+export function resetCounter(): Action {
+  return {
+    type: "counter/reset",
+  };
 }

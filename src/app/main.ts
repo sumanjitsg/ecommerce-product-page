@@ -1,7 +1,10 @@
-import "./components/sidebar/register";
-import "./components/carousel/register";
-import "./components/gallery/register";
-import "./components/lightbox/register";
-import "./components/item-adder";
+import "app/components/sidebar/register";
+import "app/components/carousel/register";
+import "app/components/gallery/register";
+import "app/components/lightbox/register";
 
-import "../styles/main.scss";
+import "app/components/counter";
+import "app/components/increment-button";
+import "app/components/decrement-button";
+
+import "styles/main.scss";

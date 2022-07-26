@@ -5,6 +5,7 @@ type Reducer = (state: State, action: Action) => State;
 type Subscriber = () => void;
 
 export default function createStore(reducer: Reducer, initialState?: State) {
+  // todo: any need for Proxy? maybe check if state mutated directly?
   const store = { state: initialState };
   const subscriptions: {
     // todo: research: using [] instead of Array<> throws never paramater error
@@ -28,7 +29,6 @@ export default function createStore(reducer: Reducer, initialState?: State) {
 
   function dispatch(action: Action) {
     store.state = reducer(store.state, action);
-
     if (subscriptions[action.type]) {
       subscriptions[action.type].forEach((subscriber) => subscriber());
     }
