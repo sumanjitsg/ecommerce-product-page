@@ -40,7 +40,7 @@ function render() {
           <p
             class="font-bold text-gray-700 leading-relaxed"
             data-cart-dialog-total-cost
-          >$${125.0 * counter}</p>
+          >$${125.0 * counter}.00</p>
         </div>
       </div>
       <div>
