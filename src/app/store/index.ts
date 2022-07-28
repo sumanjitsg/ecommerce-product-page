@@ -37,6 +37,14 @@ function reducer(state: State, action: Action): State {
       };
     }
 
+    case "cartCounter/reset": {
+      console.log("cartCounter/reset: ", action, state);
+      return {
+        ...state,
+        cartCounter: 0,
+      };
+    }
+
     default:
       return state;
   }
@@ -64,5 +72,11 @@ export function incrementCartCounterBy(value: number): Action {
   return {
     type: "cartCounter/incrementBy",
     payload: { value },
+  };
+}
+
+export function resetCartCounter(): Action {
+  return {
+    type: "cartCounter/reset",
   };
 }

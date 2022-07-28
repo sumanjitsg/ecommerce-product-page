@@ -1,17 +1,19 @@
 import { store } from "app/store";
 
-const cartBubble = document.querySelector("[data-cart-bubble]");
-const cartBubbleItemCount = document.querySelector(
+const cartBubbleEl = document.querySelector("[data-cart-bubble]");
+const cartBubbleItemCountEl = document.querySelector(
   "[data-cart-bubble-item-count]"
 );
 
 function render() {
   const counter = store.getState()?.cartCounter ?? 0;
 
-  cartBubbleItemCount.textContent = counter.toString();
+  cartBubbleItemCountEl.textContent = counter.toString();
 
-  if (counter > 0) {
-    cartBubble.classList.replace("hidden", "block");
+  if (counter === 0) {
+    cartBubbleEl.classList.add("hidden");
+  } else {
+    cartBubbleEl.classList.remove("hidden");
   }
 }
 

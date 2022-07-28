@@ -3,6 +3,13 @@ import { store } from "app/store";
 import "app/components/cart/cart-bubble";
 
 const cartButtonEl = document.querySelector("[data-cart]");
+const cartDialogEl = document.querySelector("[data-cart-dialog]");
+
+function toggleCartDialogView() {
+  cartDialogEl.classList.toggle("hidden");
+}
+
+cartButtonEl.addEventListener("click", toggleCartDialogView);
 
 function render() {
   const counter = store.getState()?.cartCounter ?? 0;
