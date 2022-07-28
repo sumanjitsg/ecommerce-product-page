@@ -4,7 +4,6 @@ import "app/components/gallery/register";
 import "app/components/lightbox/register";
 
 import "app/components/counter";
-import "app/components/increment-button";
-import "app/components/decrement-button";
+import "app/components/cart";
 
 import "styles/main.scss";

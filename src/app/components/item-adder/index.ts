@@ -9,34 +9,14 @@ import {
   cartDialogItems,
   cartDialogRemoveItemsButton,
   cartDialogTotalCost,
-  decrementButton,
-  incrementButton,
   itemCount,
 } from "./dom";
 
 let count = parseInt(itemCount.textContent);
 let cartItemCount = parseInt(cartBubbleItemCount.textContent);
 
-function incrementCount() {
-  ++count;
-  itemCount.textContent = count.toString();
-}
-function decrementCount() {
-  if (count > 1) {
-    --count;
-    itemCount.textContent = count.toString();
-  }
-}
-
 function addToCart() {
   cartItemCount += count;
-
-  cartBubbleItemCount.textContent = cartItemCount.toString();
-  // todo: aria live region probably (shift screen reader focus on items added)
-  // todo: re-use label text, used in html and here
-  cartButton.ariaLabel = `Cart, ${
-    cartItemCount === 1 ? "1 item" : `${cartItemCount} items`
-  }, Open cart`;
 
   cartDialogItemCount.textContent = cartItemCount.toString();
   cartDialogTotalCost.textContent = `$${125 * cartItemCount}.00`;
@@ -44,7 +24,6 @@ function addToCart() {
   count = 1;
   itemCount.textContent = count.toString();
 
-  cartBubble.classList.replace("hidden", "block");
   cartDialogEmpty.classList.add("hidden");
   cartDialogItems.classList.replace("hidden", "block");
 }
@@ -61,8 +40,6 @@ function toggleCartDialogView() {
   cartDialog.classList.toggle("hidden");
 }
 
-incrementButton.addEventListener("click", incrementCount);
-decrementButton.addEventListener("click", decrementCount);
 addToCartButton.addEventListener("click", addToCart);
 cartDialogRemoveItemsButton.addEventListener("click", removeItemsFromCart);
 cartButton.addEventListener("click", toggleCartDialogView);

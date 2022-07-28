@@ -7,10 +7,8 @@ type Subscriber = () => void;
 export default function createStore(reducer: Reducer, initialState?: State) {
   // todo: any need for Proxy? maybe check if state mutated directly?
   const store = { state: initialState };
-  const subscriptions: {
-    // todo: research: using [] instead of Array<> throws never paramater error
-    [actionType: string]: Array<Subscriber>;
-  } = {};
+  // todo: research: using [] instead of Array<> throws never paramater error
+  const subscriptions: Array<Subscriber> = [];
 
   // todo: selector
   function getState(): State {
@@ -18,20 +16,15 @@ export default function createStore(reducer: Reducer, initialState?: State) {
     return store.state;
   }
 
-  // todo: use typescript pick on action type
   // todo: return unsubscribe
-  function subscribe(actionType: string, subscriber: Subscriber) {
-    subscriptions[actionType] = subscriptions[actionType] ?? [];
-
+  function subscribe(subscriber: Subscriber) {
     // todo: use immutable
-    subscriptions[actionType].push(() => subscriber());
+    subscriptions.push(() => subscriber());
   }
 
   function dispatch(action: Action) {
     store.state = reducer(store.state, action);
-    if (subscriptions[action.type]) {
-      subscriptions[action.type].forEach((subscriber) => subscriber());
-    }
+    subscriptions.forEach((subscriber) => subscriber());
   }
 
   return { getState, subscribe, dispatch };

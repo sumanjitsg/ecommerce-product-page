@@ -1,12 +1,13 @@
 import createStore from "lib/state-manager";
 
-const initialState = { counter: 0 };
+const initialState = { counter: 0, cartCounter: 0 };
 export type State = typeof initialState;
 
 export const store = createStore(reducer, initialState);
 
 type Action = {
   type: string;
+  payload?: { value: number };
 };
 
 function reducer(state: State, action: Action): State {
@@ -26,6 +27,14 @@ function reducer(state: State, action: Action): State {
 
     case "counter/reset": {
       return { ...state, counter: 0 };
+    }
+
+    case "cartCounter/incrementBy": {
+      console.log("cartCounter/incrementBy: ", action, state);
+      return {
+        ...state,
+        cartCounter: state.cartCounter + action.payload?.value,
+      };
     }
 
     default:
@@ -48,5 +57,12 @@ export function decrementCounter(): Action {
 export function resetCounter(): Action {
   return {
     type: "counter/reset",
+  };
+}
+
+export function incrementCartCounterBy(value: number): Action {
+  return {
+    type: "cartCounter/incrementBy",
+    payload: { value },
   };
 }
